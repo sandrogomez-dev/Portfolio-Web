@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Sandro DevX - Full Stack Developer | Portfolio Profesional</title>
+    <meta name="title" content="Sandro DevX - Full Stack Developer | Portfolio Profesional" />
+    <meta name="description" content="Portfolio profesional de Sandro DevX - Desarrollador Full Stack especializado en React, Node.js y tecnologías modernas. Experiencia en proyectos innovadores y soluciones tech." />
+    <meta name="keywords" content="desarrollador, full stack, react, nodejs, javascript, typescript, portfolio, freelancer, programador" />
+    <meta name="author" content="Sandro DevX" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sandrodevx-portfolio.vercel.app/" />
+    <meta property="og:title" content="Sandro DevX - Full Stack Developer Portfolio" />
+    <meta property="og:description" content="Portfolio profesional showcasing innovative projects and technical expertise in modern web development." />
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:site_name" content="Sandro DevX Portfolio" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sandrodevx-portfolio.vercel.app/" />
+    <meta property="twitter:title" content="Sandro DevX - Full Stack Developer Portfolio" />
+    <meta property="twitter:description" content="Portfolio profesional showcasing innovative projects and technical expertise." />
+    <meta property="twitter:image" content="/og-image.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sandro DevX",
+      "jobTitle": "Full Stack Developer",
+      "description": "Experienced Full Stack Developer specializing in React, Node.js, and modern web technologies",
+      "url": "https://sandrodevx-portfolio.vercel.app",
+      "sameAs": [
+        "https://github.com/sandrodevx",
+        "https://linkedin.com/in/sandrodevx"
+      ],
+      "knowsAbout": ["React", "Node.js", "TypeScript", "JavaScript", "Python", "Web Development"],
+      "alumniOf": "Platzi",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelancer"
+      }
+    }
+    </script>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Critical CSS will be inlined here in production -->
+    <style>
+      /* Critical CSS for preventing FOUC */
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0a0a0a;
+        color: #ffffff;
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        overflow-x: hidden;
+      }
+      
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a0a0a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.2rem;
+        color: #00f3ff;
+        animation: pulse 1.5s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loading-text">npm install awesome-portfolio...</div>
+    </div>
+    
+    <!-- Main App Container -->
+    <div id="root"></div>
+    
+    <!-- Console Easter Egg -->
+    <script>
+      console.log(`
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                              🚀 SANDRO DEVX 🚀                              ║
+║                         Full Stack Developer Portfolio                       ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║  📧 Email: contact@sandrodevx.dev                                           ║
+║  🔗 LinkedIn: https://linkedin.com/in/sandrodevx                           ║
+║  🐙 GitHub: https://github.com/sandrodevx                                   ║
+║  💼 Portfolio: https://sandrodevx-portfolio.vercel.app                      ║
+║                                                                              ║
+║  🛠️  Tech Stack: React • Node.js • TypeScript • Python • AWS               ║
+║  💡 Specialized in: Modern Web Apps • API Development • DevOps              ║
+║                                                                              ║
+║  ¿Interesado en colaborar? ¡Contáctame!                                    ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+      `);
+      console.log('💰 Salary Range: $40k - $80k USD (Remote/Hybrid)');
+      console.log('🌟 Available for: Full-time • Freelance • Consulting');
+    </script>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

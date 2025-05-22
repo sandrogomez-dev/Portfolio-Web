@@ -1,0 +1,479 @@
+// Global styles for the portfolio
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+// Custom variables (imported from vite.config.ts)
+// @import "variables";
+
+// ===============================================
+// RESET & BASE STYLES
+// ===============================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// ===============================================
+// SCROLLBAR STYLING
+// ===============================================
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+  
+  &:hover {
+    background: var(--color-accent);
+  }
+}
+
+// Firefox scrollbar
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-surface);
+}
+
+// ===============================================
+// SELECTION STYLING
+// ===============================================
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+::-moz-selection {
+  background: var(--color-primary);
+  color: var(--color-background);
+}
+
+// ===============================================
+// TYPOGRAPHY
+// ===============================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+}
+
+code {
+  font-family: var(--font-mono);
+  background: var(--color-surface);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+pre {
+  font-family: var(--font-mono);
+  background: var(--color-surface);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+// ===============================================
+// UTILITY CLASSES
+// ===============================================
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.3),
+              0 0 40px rgba(var(--color-primary-rgb), 0.2),
+              0 0 60px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: rotateY(5deg) rotateX(5deg);
+  }
+}
+
+// ===============================================
+// ANIMATION CLASSES
+// ===============================================
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-primary);
+  }
+}
+
+// Animation utility classes
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+// ===============================================
+// COMPONENT STYLES
+// ===============================================
+
+// App container
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+// Main content
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+// Section spacing
+.section {
+  padding: 5rem 0;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    border-radius: 2px;
+  }
+}
+
+// ===============================================
+// BOOTSTRAP CUSTOMIZATIONS
+// ===============================================
+
+// Container modifications
+.container-fluid {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  
+  @media (max-width: 768px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// Button customizations
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  text-transform: none;
+  transition: all 0.3s ease;
+  border: none;
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.25);
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border: none;
+  
+  &:hover {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(var(--color-primary-rgb), 0.3);
+  }
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+  
+  &:hover {
+    background: var(--color-primary);
+    color: var(--color-background);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(var(--color-primary-rgb), 0.3);
+  }
+}
+
+// Card customizations
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Form customizations
+.form-control {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  transition: border-color 0.3s ease;
+  
+  &:focus {
+    background: var(--color-surface);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.25);
+    color: var(--color-text);
+  }
+  
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
+}
+
+// ===============================================
+// DARK THEME OVERRIDES
+// ===============================================
+
+.dark-theme {
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .card {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+  }
+  
+  .form-control {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+}
+
+// ===============================================
+// RESPONSIVE UTILITIES
+// ===============================================
+
+@media (max-width: 576px) {
+  .mobile-center {
+    text-align: center !important;
+  }
+  
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: block !important;
+  }
+}
+
+// ===============================================
+// LOADING STATES
+// ===============================================
+
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--color-surface) 25%, var(--color-border) 50%, var(--color-surface) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// ===============================================
+// ACCESSIBILITY
+// ===============================================
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Focus visible for better accessibility
+.focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} 
