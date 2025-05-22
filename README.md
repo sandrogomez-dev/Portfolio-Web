@@ -1,4 +1,4 @@
-# 🚀 SandroDevX Portfolio - Modern React Portfolio
+# Sandro Gomez - Modern React Portfolio[Building🏗️]
 
 Un portfolio moderno y técnicamente impresionante construido con React, TypeScript, Bootstrap 5 y tecnologías de vanguardia. Diseñado para destacar en procesos de selección tech con un enfoque en la experiencia de usuario y el rendimiento.
 
