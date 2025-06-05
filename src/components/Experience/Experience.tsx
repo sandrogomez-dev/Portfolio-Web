@@ -17,7 +17,7 @@ const Experience: React.FC = () => {
               <h2 className="section-title text-center">
                 <span className="text-gradient">Experiencia</span>
               </h2>
-              <p className="text-center text-muted mb-5">
+              <p className="text-center text-secondary-contrast mb-5">
                 Mi trayectoria profesional
               </p>
               

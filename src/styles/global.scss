@@ -150,26 +150,132 @@ pre {
   background-clip: text;
 }
 
+// Enhanced glassmorphism effects
 .glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
 }
 
+.glass-effect-light {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect-strong {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px) saturate(220%);
+  -webkit-backdrop-filter: blur(30px) saturate(220%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+// Dark theme glassmorphism
+[data-bs-theme="dark"] .glass-effect,
+.dark-theme .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+[data-bs-theme="dark"] .glass-effect-light,
+.dark-theme .glass-effect-light {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .glass-effect-strong,
+.dark-theme .glass-effect-strong {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+// Enhanced section separators
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(var(--color-primary-rgb, 0, 243, 255), 0.3) 20%, 
+    rgba(var(--color-accent-rgb, 168, 85, 247), 0.3) 80%, 
+    transparent
+  );
+  margin: 3rem auto;
+  max-width: 80%;
+}
+
+.section-divider-vertical {
+  width: 1px;
+  background: linear-gradient(180deg, 
+    transparent, 
+    rgba(var(--color-primary-rgb, 0, 243, 255), 0.3) 20%, 
+    rgba(var(--color-accent-rgb, 168, 85, 247), 0.3) 80%, 
+    transparent
+  );
+  height: 100px;
+  margin: 0 auto;
+}
+
 .neon-glow {
-  box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.3),
-              0 0 40px rgba(var(--color-primary-rgb), 0.2),
-              0 0 60px rgba(var(--color-primary-rgb), 0.1);
+  box-shadow: 
+    0 0 20px rgba(var(--color-primary-rgb, 0, 243, 255), 0.3),
+    0 0 40px rgba(var(--color-primary-rgb, 0, 243, 255), 0.2),
+    0 0 60px rgba(var(--color-primary-rgb, 0, 243, 255), 0.1);
+}
+
+.neon-glow-accent {
+  box-shadow: 
+    0 0 20px rgba(var(--color-accent-rgb, 168, 85, 247), 0.3),
+    0 0 40px rgba(var(--color-accent-rgb, 168, 85, 247), 0.2),
+    0 0 60px rgba(var(--color-accent-rgb, 168, 85, 247), 0.1);
 }
 
 .card-3d {
   transform-style: preserve-3d;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   &:hover {
-    transform: rotateY(5deg) rotateX(5deg);
+    transform: rotateY(5deg) rotateX(5deg) translateY(-8px);
+  }
+}
+
+// Enhanced floating animation
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-10px) scale(1.02);
+  }
+  66% {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+// Pulse effect for interactive elements
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 20px rgba(var(--color-primary-rgb, 0, 243, 255), 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(var(--color-primary-rgb, 0, 243, 255), 0.8), 
+                0 0 40px rgba(var(--color-accent-rgb, 168, 85, 247), 0.4);
   }
 }
 
@@ -476,4 +582,14 @@ pre {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Text Contrast Classes for Better Dark Mode Visibility */
+.text-secondary-contrast {
+  color: #6b7280 !important; /* Light gray for light mode */
+}
+
+[data-bs-theme="dark"] .text-secondary-contrast,
+.dark-theme .text-secondary-contrast {
+  color: #d1d5db !important; /* Much lighter gray for dark mode - better contrast */
 } 

@@ -283,12 +283,12 @@ Verifica la configuración en `tsconfig.json` y las rutas de alias.
 
 Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
-## 📞 Contacto
+## �� Contacto
 
-**Sandro DevX**
-- 📧 Email: contact@sandrodevx.dev
-- 🔗 LinkedIn: [linkedin.com/in/sandrodevx](https://linkedin.com/in/sandrodevx)
-- 🐙 GitHub: [github.com/sandrodevx](https://github.com/sandrodevx)
+**Sandro Gomez**
+- 📧 Email: sandrodevx@gmail.com
+- 🔗 LinkedIn: [linkedin.com/in/sandro-gomez-21355b346](https://www.linkedin.com/in/sandro-gomez-21355b346/)
+- 🐙 GitHub: [github.com/sandrogomez-dev](https://github.com/sandrogomez-dev)
 - 🌐 Portfolio: [sandrodevx-portfolio.vercel.app](https://sandrodevx-portfolio.vercel.app)
 
 ---

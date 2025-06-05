@@ -18,14 +18,15 @@ const Hero: React.FC = () => {
         <Row className="align-items-center">
           <Col lg={8}>
             <motion.div
+              className="hero-content-glass"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <h1 className="hero-title mb-4">
-                <span className="text-muted">Hola, soy</span>
+                <span className="hero-greeting">Hola soy</span>
                 <br />
-                <span className="text-gradient fw-bold">Sandro DevX</span>
+                <span className="text-gradient fw-bold">Sandro</span>
               </h1>
               
               <div className="hero-subtitle mb-4">
@@ -55,13 +56,13 @@ const Hero: React.FC = () => {
               </div>
 
               <motion.p 
-                className="hero-description lead mb-5"
+                className="hero-description lead mb-5 text-secondary-contrast"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
                 Desarrollador apasionado por crear experiencias digitales innovadoras. 
-                Especializado en React, Node.js y tecnologías modernas con +5 años de experiencia 
+                Especializado en React, Node.js y tecnologías modernas con +1 año de experiencia 
                 construyendo soluciones escalables y centradas en el usuario.
               </motion.p>
 
@@ -75,32 +76,40 @@ const Hero: React.FC = () => {
                   variant="primary"
                   size="lg"
                   onClick={scrollToProjects}
-                  className="btn-hero-primary"
+                  className="btn-hero-glass"
                 >
                   Ver Proyectos <FiExternalLink className="ms-2" />
                 </Button>
                 
-                                <a                  href="/cv-sandro-devx.pdf"                  download                  className="btn btn-outline-primary btn-lg btn-hero-secondary text-decoration-none"                >                  Descargar CV <FiDownload className="ms-2" />                </a>
+                <a                  
+                  href="/cv-sandro-devx.pdf"                  
+                  download                  
+                  className="btn btn-outline-primary btn-lg btn-hero-glass-outline text-decoration-none"                
+                >                  
+                  Descargar CV <FiDownload className="ms-2" />                
+                </a>
               </motion.div>
 
               {/* Stats */}
               <motion.div
-                className="hero-stats mt-5 d-flex flex-wrap gap-4"
+                className="hero-stats-glass mt-5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.8 }}
               >
-                <div className="stat-item">
-                  <div className="stat-number text-primary fw-bold">50+</div>
-                  <div className="stat-label text-muted">Proyectos</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number text-primary fw-bold">5+</div>
-                  <div className="stat-label text-muted">Años Exp.</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-number text-primary fw-bold">20+</div>
-                  <div className="stat-label text-muted">Clientes</div>
+                <div className="stats-container">
+                  <div className="stat-item-glass">
+                    <div className="stat-number text-primary fw-bold">50+</div>
+                    <div className="stat-label text-secondary-contrast">Proyectos</div>
+                  </div>
+                  <div className="stat-item-glass">
+                    <div className="stat-number text-primary fw-bold">+1</div>
+                    <div className="stat-label text-secondary-contrast">Año Exp.</div>
+                  </div>
+                  <div className="stat-item-glass">
+                    <div className="stat-number text-primary fw-bold">5</div>
+                    <div className="stat-label text-secondary-contrast">Clientes</div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -108,18 +117,18 @@ const Hero: React.FC = () => {
 
           <Col lg={4} className="text-center">
             <motion.div
-              className="hero-avatar"
+              className="hero-avatar-glass"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              <div className="avatar-container">
+              <div className="avatar-container-glass">
                 <img
-                  src="/avatar-placeholder.jpg"
-                  alt="Sandro DevX"
+                  src="/perfil-sandro.jpg"
+                  alt="Sandro Gomez"
                   className="hero-avatar-img"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/300x300/00f3ff/ffffff?text=SandroDevX';
+                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/300x300/00f3ff/ffffff?text=Sandro';
                   }}
                 />
                 <div className="avatar-glow"></div>
@@ -138,7 +147,7 @@ const Hero: React.FC = () => {
           <Button
             variant="link"
             onClick={scrollToProjects}
-            className="scroll-btn text-decoration-none"
+            className="scroll-btn-glass text-decoration-none"
             aria-label="Scroll to projects"
           >
             <FiChevronDown size={30} className="animate-bounce" />
@@ -148,14 +157,42 @@ const Hero: React.FC = () => {
 
       <style>{`
         .hero-section {
-          background: linear-gradient(135deg, rgba(0, 243, 255, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+          background: 
+            radial-gradient(circle at 25% 25%, rgba(0, 243, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+            linear-gradient(135deg, rgba(0, 243, 255, 0.03) 0%, rgba(168, 85, 247, 0.03) 100%);
           position: relative;
           overflow: hidden;
+          padding-top: 100px;
+          padding-bottom: 60px;
+        }
+
+        .hero-content-glass {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(20px) saturate(180%);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 20px;
+          padding: 1.5rem;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+        }
+        
+        [data-bs-theme="dark"] .hero-content-glass,
+        .dark-theme .hero-content-glass {
+          background: rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .hero-title {
           font-size: 4rem;
           line-height: 1.1;
+          margin-bottom: 1rem;
+        }
+
+        .hero-greeting {
+          color: var(--color-text-secondary) !important;
         }
 
         .hero-subtitle h2 {
@@ -166,33 +203,89 @@ const Hero: React.FC = () => {
           font-size: 1.25rem;
           color: var(--color-text-secondary);
           max-width: 600px;
+          margin-bottom: 2rem;
         }
 
-        .btn-hero-primary,
-        .btn-hero-secondary {
+        .btn-hero-glass,
+        .btn-hero-glass-outline {
           padding: 0.75rem 2rem;
           font-weight: 600;
           border-radius: 50px;
-          transition: all 0.3s ease;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .btn-hero-primary:hover {
+        .btn-hero-glass {
+          background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+          box-shadow: 0 8px 32px rgba(0, 243, 255, 0.3);
+        }
+
+        .btn-hero-glass:hover {
           transform: translateY(-3px);
-          box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3);
+          box-shadow: 0 12px 40px rgba(0, 243, 255, 0.4);
+          border-color: rgba(255, 255, 255, 0.3);
         }
 
-        .btn-hero-secondary:hover {
+        .btn-hero-glass-outline {
+          background: rgba(255, 255, 255, 0.1);
+          color: var(--color-primary);
+          border: 2px solid var(--color-primary);
+        }
+
+        .btn-hero-glass-outline:hover {
+          background: var(--color-primary);
+          color: white;
           transform: translateY(-3px);
-          box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);
+          box-shadow: 0 12px 40px rgba(0, 243, 255, 0.3);
         }
 
-        .hero-stats {
-          border-top: 1px solid var(--color-border);
-          padding-top: 2rem;
+        .hero-stats-glass {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(20px) saturate(180%);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 16px;
+          padding: 1rem;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          margin-top: 2rem;
+        }
+        
+        [data-bs-theme="dark"] .hero-stats-glass,
+        .dark-theme .hero-stats-glass {
+          background: rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .stat-item {
+        .stats-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+          justify-content: space-around;
+        }
+
+        .stat-item-glass {
           text-align: center;
+          padding: 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 12px;
+          transition: all 0.3s ease;
+          flex: 1;
+          min-width: 100px;
+        }
+        
+        .stat-item-glass:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 243, 255, 0.2);
+          border-color: rgba(0, 243, 255, 0.3);
+        }
+        
+        [data-bs-theme="dark"] .stat-item-glass,
+        .dark-theme .stat-item-glass {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .stat-number {
@@ -206,19 +299,38 @@ const Hero: React.FC = () => {
           letter-spacing: 0.05em;
         }
 
-        .avatar-container {
+        .hero-avatar-glass {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(20px) saturate(180%);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          padding: 1rem;
+          display: inline-block;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          margin-top: 1rem;
+        }
+        
+        [data-bs-theme="dark"] .hero-avatar-glass,
+        .dark-theme .hero-avatar-glass {
+          background: rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar-container-glass {
           position: relative;
           display: inline-block;
         }
 
         .hero-avatar-img {
-          width: 300px;
-          height: 300px;
+          width: 280px;
+          height: 280px;
           border-radius: 50%;
           object-fit: cover;
           border: 4px solid var(--color-primary);
           position: relative;
           z-index: 2;
+          box-shadow: 0 8px 32px rgba(0, 243, 255, 0.3);
         }
 
         .avatar-glow {
@@ -238,8 +350,30 @@ const Hero: React.FC = () => {
           margin-bottom: 2rem;
         }
 
-        .scroll-btn {
+        .scroll-btn-glass {
           color: var(--color-primary) !important;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+        
+        .scroll-btn-glass:hover {
+          background: rgba(255, 255, 255, 0.2);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 243, 255, 0.2);
+        }
+        
+        [data-bs-theme="dark"] .scroll-btn-glass,
+        .dark-theme .scroll-btn-glass {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .animate-bounce {
@@ -262,8 +396,20 @@ const Hero: React.FC = () => {
         }
 
         @media (max-width: 768px) {
+          .hero-section {
+            padding-top: 80px;
+            padding-bottom: 60px;
+          }
+          
+          .hero-content-glass {
+            padding: 1.25rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+          }
+          
           .hero-title {
             font-size: 2.5rem;
+            margin-bottom: 0.75rem;
           }
 
           .hero-subtitle h2 {
@@ -272,15 +418,26 @@ const Hero: React.FC = () => {
 
           .hero-description {
             font-size: 1.1rem;
+            margin-bottom: 1.5rem;
           }
 
           .hero-avatar-img {
-            width: 250px;
-            height: 250px;
+            width: 220px;
+            height: 220px;
           }
 
-          .hero-stats {
+          .stats-container {
             justify-content: center;
+            gap: 1rem;
+          }
+          
+          .stat-item-glass {
+            min-width: 90px;
+          }
+          
+          .hero-stats-glass {
+            margin-top: 1.5rem;
+            padding: 0.75rem;
           }
         }
       `}</style>

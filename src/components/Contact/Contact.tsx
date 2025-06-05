@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
               <h2 className="section-title text-center">
                 <span className="text-gradient">Contacto</span>
               </h2>
-              <p className="text-center text-muted mb-5">
+              <p className="text-center text-secondary-contrast mb-5">
                 ¿Tienes un proyecto en mente? ¡Hablemos!
               </p>
               

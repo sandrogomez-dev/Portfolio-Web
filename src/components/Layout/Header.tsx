@@ -49,7 +49,7 @@ const Header: React.FC = () => {
       <Navbar 
         expand="lg" 
         expanded={expanded}
-        className={`custom-navbar ${scrolled ? 'glass-effect' : ''}`}
+        className={`custom-navbar ${scrolled ? 'glass-navbar' : 'transparent-navbar'}`}
         variant={isDark ? 'dark' : 'light'}
       >
         <Container>
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
             <Button
               variant="outline-primary"
               size="sm"
-              className="theme-toggle me-2"
+              className="theme-toggle glass-button me-2"
               onClick={toggleTheme}
               aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
             >
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             <Navbar.Toggle
               aria-controls="basic-navbar-nav"
               onClick={() => setExpanded(!expanded)}
-              className="border-0"
+              className="border-0 glass-button"
             >
               {expanded ? <FiX /> : <FiMenu />}
             </Navbar.Toggle>
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
                 >
                   <Nav.Link
                     href={item.href}
-                    className="nav-link-custom"
+                    className="nav-link-glass"
                     onClick={() => handleNavClick(item.href)}
                   >
                     {item.label}
@@ -105,6 +105,108 @@ const Header: React.FC = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      
+      <style>{`
+        .custom-navbar {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          padding: 1rem 0;
+        }
+        
+        .transparent-navbar {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(5px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-navbar {
+          background: rgba(255, 255, 255, 0.8);
+          backdrop-filter: blur(20px) saturate(180%);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-bs-theme="dark"] .glass-navbar,
+        .dark-theme .glass-navbar {
+          background: rgba(0, 0, 0, 0.8);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        [data-bs-theme="dark"] .transparent-navbar,
+        .dark-theme .transparent-navbar {
+          background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-button {
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 12px;
+          transition: all 0.3s ease;
+        }
+        
+        .glass-button:hover {
+          background: rgba(255, 255, 255, 0.3);
+          border-color: var(--color-primary);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 20px rgba(0, 243, 255, 0.2);
+        }
+        
+        [data-bs-theme="dark"] .glass-button,
+        .dark-theme .glass-button {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        [data-bs-theme="dark"] .glass-button:hover,
+        .dark-theme .glass-button:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link-glass {
+          color: var(--color-text) !important;
+          font-weight: 500;
+          padding: 0.5rem 1rem !important;
+          margin: 0 0.25rem;
+          border-radius: 10px;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+        
+        .nav-link-glass:hover {
+          color: var(--color-primary) !important;
+          background: rgba(var(--color-primary-rgb, 0, 243, 255), 0.1);
+          backdrop-filter: blur(10px);
+          transform: translateY(-1px);
+        }
+        
+        .nav-link-glass::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+          opacity: 0;
+          border-radius: 10px;
+          transition: opacity 0.3s ease;
+          z-index: -1;
+        }
+        
+        .nav-link-glass:hover::before {
+          opacity: 0.1;
+        }
+        
+        .brand-logo {
+          font-size: 1.5rem;
+          transition: all 0.3s ease;
+        }
+        
+        .brand-logo:hover {
+          transform: scale(1.05);
+        }
+      `}</style>
     </motion.header>
   );
 };

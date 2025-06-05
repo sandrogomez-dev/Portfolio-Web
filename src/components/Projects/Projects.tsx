@@ -359,19 +359,37 @@ const Projects: React.FC = () => {
         }
 
         .card-3d {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(15px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
           border-radius: 20px;
           overflow: hidden;
           transition: all 0.3s ease;
           height: 100%;
           display: flex;
           flex-direction: column;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .card-3d:hover {
-          box-shadow: 0 20px 40px rgba(0, 243, 255, 0.1);
+          background: rgba(255, 255, 255, 0.25);
+          box-shadow: 0 20px 40px rgba(0, 243, 255, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+          border-color: rgba(0, 243, 255, 0.4);
+          transform: translateY(-5px);
+        }
+
+        /* Dark theme adjustments */
+        [data-bs-theme="dark"] .card-3d,
+        .dark-theme .card-3d {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-bs-theme="dark"] .card-3d:hover,
+        .dark-theme .card-3d:hover {
+          background: rgba(255, 255, 255, 0.1);
+          box-shadow: 0 20px 40px rgba(0, 243, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
           border-color: rgba(0, 243, 255, 0.3);
         }
 

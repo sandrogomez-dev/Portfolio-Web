@@ -1,7 +1,7 @@
 {
   "name": "SandroDevX Portfolio - Full Stack Developer",
   "short_name": "SandroDevX",
-  "description": "Portfolio profesional de Sandro DevX - Desarrollador Full Stack especializado en React, Node.js y tecnologías modernas",
+  "description": "Portfolio profesional de Sandro Gomez (SandroDevX) - Desarrollador Full Stack especializado en React, Node.js y tecnologías modernas",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
