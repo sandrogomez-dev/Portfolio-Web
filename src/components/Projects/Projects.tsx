@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
               <h2 className="section-title text-center mb-2">
                 <span className="text-gradient">Proyectos Destacados</span>
               </h2>
-              <p className="text-center text-muted mb-5 lead">
+              <p className="text-center text-secondary-contrast mb-5 lead">
                 Algunos de mis trabajos más recientes y destacados
               </p>
             </Col>
@@ -120,7 +120,7 @@ const Projects: React.FC = () => {
                       {/* Project Content */}
                       <div className="project-content p-3">
                         <h5 className="project-title mb-2">{project.title}</h5>
-                        <p className="project-description text-muted mb-3">
+                        <p className="project-description text-secondary-contrast mb-3">
                           {project.description}
                         </p>
 
