@@ -61,8 +61,8 @@ const Header: React.FC = () => {
             &lt;SandroDevX /&gt;
           </Navbar.Brand>
 
-          <div className="d-flex align-items-center order-lg-3">
-            {/* Theme Toggle */}
+          {/* Mobile actions - Theme Toggle and Menu Button */}
+          <div className="d-flex align-items-center d-lg-none">
             <Button
               variant="outline-primary"
               size="sm"
@@ -73,7 +73,6 @@ const Header: React.FC = () => {
               {isDark ? <FiSun /> : <FiMoon />}
             </Button>
 
-            {/* Mobile Menu Toggle */}
             <Navbar.Toggle
               aria-controls="basic-navbar-nav"
               onClick={() => setExpanded(!expanded)}
@@ -83,8 +82,21 @@ const Header: React.FC = () => {
             </Navbar.Toggle>
           </div>
 
+          {/* Desktop theme toggle */}
+          <div className="d-none d-lg-flex align-items-center ms-auto order-lg-3">
+            <Button
+              variant="outline-primary"
+              size="sm"
+              className="theme-toggle glass-button"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+            >
+              {isDark ? <FiSun /> : <FiMoon />}
+            </Button>
+          </div>
+
           <Navbar.Collapse id="basic-navbar-nav" className="order-lg-2">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto me-lg-3">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.id}
@@ -110,6 +122,7 @@ const Header: React.FC = () => {
         .custom-navbar {
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           padding: 1rem 0;
+          z-index: 1030;
         }
         
         .transparent-navbar {
@@ -143,6 +156,11 @@ const Header: React.FC = () => {
           border: 1px solid rgba(255, 255, 255, 0.3);
           border-radius: 12px;
           transition: all 0.3s ease;
+          min-width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         
         .glass-button:hover {
@@ -161,6 +179,39 @@ const Header: React.FC = () => {
         [data-bs-theme="dark"] .glass-button:hover,
         .dark-theme .glass-button:hover {
           background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Mobile navbar improvements */
+        @media (max-width: 991.98px) {
+          .navbar-collapse {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          }
+          
+          [data-bs-theme="dark"] .navbar-collapse,
+          .dark-theme .navbar-collapse {
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          }
+          
+          .custom-navbar {
+            padding: 0.75rem 0;
+          }
+          
+          .navbar-toggler {
+            padding: 0.25rem;
+            font-size: 1.1rem;
+          }
+          
+          .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 243, 255, 0.25);
+          }
         }
         
         .nav-link-glass {
@@ -205,6 +256,22 @@ const Header: React.FC = () => {
         
         .brand-logo:hover {
           transform: scale(1.05);
+        }
+        
+        /* Ensure proper z-index hierarchy */
+        .fixed-top {
+          z-index: 1030;
+        }
+        
+        /* Mobile landscape adjustments */
+        @media (max-width: 767.98px) and (orientation: landscape) {
+          .custom-navbar {
+            padding: 0.5rem 0;
+          }
+          
+          .brand-logo {
+            font-size: 1.25rem;
+          }
         }
       `}</style>
     </motion.header>

@@ -197,13 +197,14 @@ const Projects: React.FC = () => {
         centered
         className="project-modal"
       >
-        <Modal.Header className="border-0 position-relative">
+        <Modal.Header className="border-0 position-relative p-0">
           <Button
             variant="link"
-            className="btn-close-custom position-absolute top-0 end-0 m-3"
+            className="btn-close-custom position-absolute"
             onClick={() => setShowModal(false)}
+            aria-label="Cerrar modal"
           >
-            <FiX size={24} />
+            <FiX size={20} />
           </Button>
         </Modal.Header>
         
@@ -524,21 +525,47 @@ const Projects: React.FC = () => {
         }
 
         .btn-close-custom {
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: rgba(0, 0, 0, 0.8);
+          border: 2px solid rgba(255, 255, 255, 0.3);
           border-radius: 50%;
-          width: 40px;
-          height: 40px;
+          width: 44px;
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--color-text);
+          color: white;
           backdrop-filter: blur(10px);
+          top: 15px;
+          right: 15px;
+          z-index: 1050;
+          transition: all 0.3s ease;
+          font-size: 1.2rem;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .btn-close-custom:hover {
-          background: rgba(255, 255, 255, 0.2);
-          color: var(--color-primary);
+          background: rgba(220, 38, 38, 0.9);
+          border-color: rgba(220, 38, 38, 0.8);
+          color: white;
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        .btn-close-custom:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.5);
+        }
+
+        [data-bs-theme="dark"] .btn-close-custom {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.4);
+          color: white;
+        }
+
+        [data-bs-theme="dark"] .btn-close-custom:hover {
+          background: rgba(220, 38, 38, 0.9);
+          border-color: rgba(220, 38, 38, 0.8);
+          color: white;
         }
 
         .metric-card {
@@ -589,6 +616,45 @@ const Projects: React.FC = () => {
           .project-metrics {
             flex-direction: column;
             gap: 0.5rem;
+          }
+
+          .btn-close-custom {
+            width: 48px;
+            height: 48px;
+            top: 10px;
+            right: 10px;
+            font-size: 1.3rem;
+          }
+
+          .project-modal .modal-dialog {
+            margin: 0.5rem;
+          }
+
+          .modal-hero-image {
+            height: 250px;
+          }
+
+          .modal-hero-image img {
+            height: 250px !important;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .btn-close-custom {
+            width: 50px;
+            height: 50px;
+            top: 8px;
+            right: 8px;
+            font-size: 1.4rem;
+          }
+
+          .project-modal-content .p-4 {
+            padding: 1.5rem !important;
+          }
+
+          .tech-tag-large {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
           }
         }
       `}</style>
