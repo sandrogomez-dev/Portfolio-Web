@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { FiChevronDown, FiExternalLink, FiDownload } from 'react-icons/fi';
+import { trackCVDownload } from '@/utils/analytics';
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
@@ -10,6 +11,10 @@ const Hero: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleCVDownload = () => {
+    trackCVDownload();
   };
 
   return (
@@ -82,8 +87,9 @@ const Hero: React.FC = () => {
                 </Button>
                 
                 <a                  
-                  href="/cv-sandro-devx.pdf"                  
-                  download                  
+                  href="/CV_Sandro.pdf"                  
+                  download="CV_Sandro_Gomez.pdf"
+                  onClick={handleCVDownload}
                   className="btn btn-outline-primary btn-lg btn-hero-glass-outline text-decoration-none"                
                 >                  
                   Descargar CV <FiDownload className="ms-2" />                
