@@ -105,15 +105,15 @@ const Hero: React.FC = () => {
               >
                 <div className="stats-container">
                   <div className="stat-item-glass">
-                    <div className="stat-number text-primary fw-bold">50+</div>
+                    <div className="stat-number stat-number-primary fw-bold">50+</div>
                     <div className="stat-label text-secondary-contrast">Proyectos</div>
                   </div>
                   <div className="stat-item-glass">
-                    <div className="stat-number text-primary fw-bold">+1</div>
+                    <div className="stat-number stat-number-primary fw-bold">+1</div>
                     <div className="stat-label text-secondary-contrast">Año Exp.</div>
                   </div>
                   <div className="stat-item-glass">
-                    <div className="stat-number text-primary fw-bold">5</div>
+                    <div className="stat-number stat-number-primary fw-bold">5</div>
                     <div className="stat-label text-secondary-contrast">Clientes</div>
                   </div>
                 </div>
@@ -164,9 +164,9 @@ const Hero: React.FC = () => {
       <style>{`
         .hero-section {
           background: 
-            radial-gradient(circle at 25% 25%, rgba(0, 243, 255, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
-            linear-gradient(135deg, rgba(0, 243, 255, 0.03) 0%, rgba(168, 85, 247, 0.03) 100%);
+            radial-gradient(circle at 25% 25%, rgba(139, 115, 85, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(166, 138, 100, 0.05) 0%, transparent 50%),
+            var(--color-background);
           position: relative;
           overflow: hidden;
           padding-top: 100px;
@@ -224,12 +224,12 @@ const Hero: React.FC = () => {
 
         .btn-hero-glass {
           background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-          box-shadow: 0 8px 32px rgba(0, 243, 255, 0.3);
+          box-shadow: 0 4px 12px rgba(139, 115, 85, 0.25);
         }
 
         .btn-hero-glass:hover {
           transform: translateY(-3px);
-          box-shadow: 0 12px 40px rgba(0, 243, 255, 0.4);
+          box-shadow: 0 8px 20px rgba(139, 115, 85, 0.3);
           border-color: rgba(255, 255, 255, 0.3);
         }
 
@@ -243,7 +243,7 @@ const Hero: React.FC = () => {
           background: var(--color-primary);
           color: white;
           transform: translateY(-3px);
-          box-shadow: 0 12px 40px rgba(0, 243, 255, 0.3);
+          box-shadow: 0 8px 20px rgba(139, 115, 85, 0.25);
         }
 
         .hero-stats-glass {
@@ -284,8 +284,8 @@ const Hero: React.FC = () => {
         
         .stat-item-glass:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 243, 255, 0.2);
-          border-color: rgba(0, 243, 255, 0.3);
+          box-shadow: 0 8px 20px rgba(139, 115, 85, 0.15);
+          border-color: rgba(139, 115, 85, 0.25);
         }
         
         [data-bs-theme="dark"] .stat-item-glass,
@@ -297,6 +297,10 @@ const Hero: React.FC = () => {
         .stat-number {
           font-size: 2rem;
           font-family: var(--font-mono);
+        }
+        
+        .stat-number-primary {
+          color: var(--color-primary) !important;
         }
 
         .stat-label {
@@ -336,7 +340,7 @@ const Hero: React.FC = () => {
           border: 4px solid var(--color-primary);
           position: relative;
           z-index: 2;
-          box-shadow: 0 8px 32px rgba(0, 243, 255, 0.3);
+          box-shadow: 0 8px 24px rgba(139, 115, 85, 0.2);
         }
 
         .avatar-glow {
@@ -373,7 +377,7 @@ const Hero: React.FC = () => {
         .scroll-btn-glass:hover {
           background: rgba(255, 255, 255, 0.2);
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 243, 255, 0.2);
+          box-shadow: 0 8px 20px rgba(139, 115, 85, 0.15);
         }
         
         [data-bs-theme="dark"] .scroll-btn-glass,

@@ -179,11 +179,11 @@ const Experience: React.FC = () => {
                           </div>
 
                           <div className="experience-meta mb-3">
-                            <div className="d-flex align-items-center text-muted mb-1">
+                            <div className="d-flex align-items-center text-secondary-contrast mb-1">
                               <FiCalendar size={14} className="me-2" />
                               <span>{exp.period}</span>
                             </div>
-                            <div className="d-flex align-items-center text-muted">
+                            <div className="d-flex align-items-center text-secondary-contrast">
                               <FiMapPin size={14} className="me-2" />
                               <span>{exp.location}</span>
                             </div>

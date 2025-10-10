@@ -58,7 +58,7 @@ const Header: React.FC = () => {
             className="brand-logo text-gradient fw-bold"
             onClick={() => handleNavClick('#hero')}
           >
-            &lt;SandroDevX /&gt;
+            Sandro Gomez
           </Navbar.Brand>
 
           {/* Mobile actions - Theme Toggle and Menu Button */}
@@ -167,7 +167,7 @@ const Header: React.FC = () => {
           background: rgba(255, 255, 255, 0.3);
           border-color: var(--color-primary);
           transform: translateY(-1px);
-          box-shadow: 0 4px 20px rgba(0, 243, 255, 0.2);
+          box-shadow: 0 4px 12px rgba(139, 115, 85, 0.2);
         }
         
         [data-bs-theme="dark"] .glass-button,
@@ -210,7 +210,7 @@ const Header: React.FC = () => {
           }
           
           .navbar-toggler:focus {
-            box-shadow: 0 0 0 0.25rem rgba(0, 243, 255, 0.25);
+            box-shadow: 0 0 0 0.25rem rgba(139, 115, 85, 0.25);
           }
         }
         
@@ -226,7 +226,7 @@ const Header: React.FC = () => {
         
         .nav-link-glass:hover {
           color: var(--color-primary) !important;
-          background: rgba(var(--color-primary-rgb, 0, 243, 255), 0.1);
+          background: rgba(139, 115, 85, 0.1);
           backdrop-filter: blur(10px);
           transform: translateY(-1px);
         }

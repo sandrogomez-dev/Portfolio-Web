@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <Row className="align-items-center">
           <Col md={6} className="text-center text-md-start">
             <p className="mb-0">
-              © {currentYear} SandroDevX. Hecho con <FiHeart className="text-danger" /> usando React & TypeScript
+              © {currentYear} Sandro Gomez. Hecho con <FiHeart className="text-danger" /> usando React & TypeScript
             </p>
           </Col>
           <Col md={6} className="text-center text-md-end">

@@ -15,8 +15,8 @@ const ParticleBackground: React.FC = () => {
         zIndex: -1,
         pointerEvents: 'none',
         background: isDark 
-          ? 'radial-gradient(circle at 25% 25%, rgba(0, 243, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.1) 0%, transparent 50%)'
-          : 'radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(0, 243, 255, 0.1) 0%, transparent 50%)',
+          ? 'radial-gradient(circle at 25% 25%, rgba(166, 138, 100, 0.06) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(139, 115, 85, 0.06) 0%, transparent 50%)'
+          : 'radial-gradient(circle at 25% 25%, rgba(139, 115, 85, 0.04) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(166, 138, 100, 0.04) 0%, transparent 50%)',
       }}
     >
       {/* Simple animated dots as fallback */}
@@ -29,9 +29,9 @@ const ParticleBackground: React.FC = () => {
               position: 'absolute',
               width: '2px',
               height: '2px',
-              backgroundColor: isDark ? '#00f3ff' : '#a855f7',
+              backgroundColor: isDark ? '#A68A64' : '#8B7355',
               borderRadius: '50%',
-              opacity: 0.3,
+              opacity: 0.2,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
