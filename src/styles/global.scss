@@ -894,6 +894,30 @@ pre {
   font-weight: 500;
 }
 
+// Experience custom colors (avoiding old electric blue)
+.experience-company {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+.experience-icon {
+  color: var(--color-accent) !important;
+}
+
+.experience-section-title {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+[data-bs-theme="dark"] .experience-company,
+[data-bs-theme="dark"] .experience-icon,
+[data-bs-theme="dark"] .experience-section-title,
+.dark-theme .experience-company,
+.dark-theme .experience-icon,
+.dark-theme .experience-section-title {
+  color: var(--color-secondary) !important;
+}
+
 .tech-badge {
   background: rgba(var(--color-primary-rgb, 0, 243, 255), 0.1);
   color: var(--color-primary);

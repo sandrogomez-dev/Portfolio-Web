@@ -164,7 +164,7 @@ const Experience: React.FC = () => {
                           <div className="d-flex justify-content-between align-items-start mb-3">
                             <div className="flex-grow-1">
                               <h4 className="mb-1 text-gradient">{exp.position}</h4>
-                              <h5 className="mb-2 text-primary">{exp.company}</h5>
+                              <h5 className="mb-2 experience-company">{exp.company}</h5>
                             </div>
                             <div className="d-flex align-items-center gap-2">
                               <span className="badge badge-type">{exp.type}</span>
@@ -173,7 +173,7 @@ const Experience: React.FC = () => {
                                 transition={{ duration: 0.3 }}
                                 className="expand-icon"
                               >
-                                <FiChevronDown size={20} className="text-primary" />
+                                <FiChevronDown size={20} className="experience-icon" />
                               </motion.div>
                             </div>
                           </div>
@@ -207,7 +207,7 @@ const Experience: React.FC = () => {
                             >
                               <div className="pt-3 border-top mt-3">
                                 <div className="achievements mb-3">
-                                  <h6 className="mb-2 text-primary">🏆 Logros Destacados:</h6>
+                                  <h6 className="mb-2 experience-section-title">🏆 Logros Destacados:</h6>
                                   <ul className="list-unstyled">
                                     {exp.achievements.map((achievement, idx) => (
                                       <motion.li
@@ -225,7 +225,7 @@ const Experience: React.FC = () => {
                                 </div>
 
                                 <div className="technologies mb-3">
-                                  <h6 className="mb-2 text-primary">💻 Tecnologías:</h6>
+                                  <h6 className="mb-2 experience-section-title">💻 Tecnologías:</h6>
                                   <div className="d-flex flex-wrap gap-2">
                                     {exp.technologies.map((tech, idx) => (
                                       <motion.span
@@ -243,7 +243,7 @@ const Experience: React.FC = () => {
 
                                 {exp.projects && (
                                   <div className="projects">
-                                    <h6 className="mb-2 text-primary">🚀 Proyectos:</h6>
+                                    <h6 className="mb-2 experience-section-title">🚀 Proyectos:</h6>
                                     <div className="d-flex flex-wrap gap-2">
                                       {exp.projects.map((project, idx) => (
                                         <motion.a
