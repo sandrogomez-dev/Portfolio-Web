@@ -1,5 +1,5 @@
-// Global styles for the portfolio
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+// Global styles for the portfolio - Minimal & Natural
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 // Custom variables (imported from vite.config.ts)
 // @import "variables";
@@ -20,12 +20,14 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.7;
   color: var(--color-text);
   background-color: var(--color-background);
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 // ===============================================
@@ -74,16 +76,17 @@ html {
 // ===============================================
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
   color: var(--color-text);
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 600;
   
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -91,7 +94,8 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
+  font-weight: 500;
   
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -100,6 +104,7 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  font-weight: 500;
   
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -144,106 +149,76 @@ pre {
 // ===============================================
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-// Enhanced glassmorphism effects
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+// Minimal card effect (no glass, just clean design)
+.minimal-card {
+  background: var(--color-surface, #FAFAF8);
+  border: 1px solid rgba(139, 115, 85, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(43, 36, 33, 0.04);
+  transition: all 0.3s ease;
+}
+
+.minimal-card-elevated {
+  background: var(--color-surface, #FAFAF8);
+  border: 1px solid rgba(139, 115, 85, 0.15);
   border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(43, 36, 33, 0.06);
+  transition: all 0.3s ease;
 }
 
-.glass-effect-light {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(25px) saturate(200%);
-  -webkit-backdrop-filter: blur(25px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+// Dark theme minimal cards
+[data-bs-theme="dark"] .minimal-card,
+.dark-theme .minimal-card {
+  background: var(--color-surface, #252018);
+  border-color: rgba(166, 138, 100, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.glass-effect-strong {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(30px) saturate(220%);
-  -webkit-backdrop-filter: blur(30px) saturate(220%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 24px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+[data-bs-theme="dark"] .minimal-card-elevated,
+.dark-theme .minimal-card-elevated {
+  background: var(--color-surface, #2F2920);
+  border-color: rgba(166, 138, 100, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-// Dark theme glassmorphism
-[data-bs-theme="dark"] .glass-effect,
-.dark-theme .glass-effect {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-[data-bs-theme="dark"] .glass-effect-light,
-.dark-theme .glass-effect-light {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-[data-bs-theme="dark"] .glass-effect-strong,
-.dark-theme .glass-effect-strong {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-}
-
-// Enhanced section separators
+// Minimal section separators
 .section-divider {
   height: 1px;
   background: linear-gradient(90deg, 
     transparent, 
-    rgba(var(--color-primary-rgb, 0, 243, 255), 0.3) 20%, 
-    rgba(var(--color-accent-rgb, 168, 85, 247), 0.3) 80%, 
+    rgba(139, 115, 85, 0.2) 20%, 
+    rgba(139, 115, 85, 0.2) 80%, 
     transparent
   );
-  margin: 3rem auto;
-  max-width: 80%;
+  margin: 4rem auto;
+  max-width: 70%;
 }
 
 .section-divider-vertical {
   width: 1px;
   background: linear-gradient(180deg, 
     transparent, 
-    rgba(var(--color-primary-rgb, 0, 243, 255), 0.3) 20%, 
-    rgba(var(--color-accent-rgb, 168, 85, 247), 0.3) 80%, 
+    rgba(139, 115, 85, 0.2) 20%, 
+    rgba(139, 115, 85, 0.2) 80%, 
     transparent
   );
   height: 100px;
   margin: 0 auto;
 }
 
-.neon-glow {
-  box-shadow: 
-    0 0 20px rgba(var(--color-primary-rgb, 0, 243, 255), 0.3),
-    0 0 40px rgba(var(--color-primary-rgb, 0, 243, 255), 0.2),
-    0 0 60px rgba(var(--color-primary-rgb, 0, 243, 255), 0.1);
-}
-
-.neon-glow-accent {
-  box-shadow: 
-    0 0 20px rgba(var(--color-accent-rgb, 168, 85, 247), 0.3),
-    0 0 40px rgba(var(--color-accent-rgb, 168, 85, 247), 0.2),
-    0 0 60px rgba(var(--color-accent-rgb, 168, 85, 247), 0.1);
-}
-
-.card-3d {
-  transform-style: preserve-3d;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+// Subtle hover lift (no 3D rotation)
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
-    transform: rotateY(5deg) rotateX(5deg) translateY(-8px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(43, 36, 33, 0.1);
   }
 }
 
