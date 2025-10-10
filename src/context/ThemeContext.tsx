@@ -13,36 +13,36 @@ interface ThemeContextType {
 const defaultThemes: Record<'light' | 'dark', Omit<Theme, 'mode'>> = {
   light: {
     colors: {
-      primary: '#00f3ff',
-      secondary: '#ff4d5a',
-      accent: '#7c3aed',
-      danger: '#dc2626',
-      background: '#ffffff',
-      surface: '#f8fafc',
-      text: '#1e293b',
-      textSecondary: '#64748b',
-      border: '#e2e8f0',
+      primary: '#8B7355',        // Warm brown
+      secondary: '#A68A64',      // Light caramel
+      accent: '#6B5D52',         // Deep taupe
+      danger: '#C17767',         // Muted terracotta
+      background: '#F5F1ED',     // Cream background
+      surface: '#FAFAF8',        // Warm off-white
+      text: '#2B2421',           // Warm near-black
+      textSecondary: '#6D6155',  // Dark taupe
+      border: '#E5DDD5',         // Medium beige
     },
     fonts: {
-      primary: "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif",
-      mono: "'JetBrains Mono', 'Fira Code', 'Consolas', monospace",
+      primary: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      mono: "'SF Mono', 'Monaco', 'Inconsolata', monospace",
     },
   },
   dark: {
     colors: {
-      primary: '#00f3ff',
-      secondary: '#ff4d5a',
-      accent: '#a855f7',
-      danger: '#ef4444',
-      background: '#0a0a0a',
-      surface: '#111111',
-      text: '#ffffff',
-      textSecondary: '#94a3b8',
-      border: '#1e293b',
+      primary: '#A68A64',        // Light caramel (lighter for dark mode)
+      secondary: '#D4A373',      // Warm sand
+      accent: '#8B7355',         // Warm brown
+      danger: '#D4987F',         // Lighter terracotta
+      background: '#1A1613',     // Warm dark bg
+      surface: '#252018',        // Dark surface
+      text: '#EDE8E3',           // Light beige text
+      textSecondary: '#B8AFA5',  // Light taupe
+      border: '#3D3530',         // Dark border
     },
     fonts: {
-      primary: "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif",
-      mono: "'JetBrains Mono', 'Fira Code', 'Consolas', monospace",
+      primary: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      mono: "'SF Mono', 'Monaco', 'Inconsolata', monospace",
     },
   },
 };
