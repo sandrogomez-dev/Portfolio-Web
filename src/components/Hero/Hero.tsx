@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
               <h1 className="hero-title mb-4">
                 <span className="hero-greeting">Hola soy</span>
                 <br />
-                <span className="text-gradient fw-bold">Sandro</span>
+                <span className="text-gradient fw-bold">Sandro<span className="typing-cursor">|</span></span>
               </h1>
               
               <div className="hero-subtitle mb-4">
@@ -403,6 +403,21 @@ const Hero: React.FC = () => {
           90% {
             transform: translateY(-2px);
           }
+        }
+
+        @keyframes blink {
+          0%, 49% {
+            opacity: 1;
+          }
+          50%, 100% {
+            opacity: 0;
+          }
+        }
+
+        .typing-cursor {
+          animation: blink 1s infinite;
+          font-weight: 300;
+          margin-left: 4px;
         }
 
         @media (max-width: 768px) {
