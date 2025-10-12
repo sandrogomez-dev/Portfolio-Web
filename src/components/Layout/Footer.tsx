@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <Row className="align-items-center">
           <Col md={6} className="text-center text-md-start">
             <p className="mb-0">
-              © {currentYear} Sandro Gomez. Hecho con <FiHeart className="text-danger" /> usando React & TypeScript
+              © {currentYear} Sandro Gomez. Hecho con <FiHeart className="text-danger heart-beat" /> usando React & TypeScript
             </p>
           </Col>
           <Col md={6} className="text-center text-md-end">
@@ -75,6 +75,24 @@ const Footer: React.FC = () => {
           background: rgba(255, 255, 255, 0.25);
           transform: translateY(-3px);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes heartbeat {
+          0%, 100% {
+            transform: scale(1);
+          }
+          10%, 30% {
+            transform: scale(1.1);
+          }
+          20%, 40% {
+            transform: scale(1);
+          }
+        }
+        
+        .heart-beat {
+          display: inline-block;
+          animation: heartbeat 2s ease-in-out infinite;
+          transform-origin: center;
         }
       `}</style>
     </footer>
