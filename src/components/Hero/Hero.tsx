@@ -104,15 +104,15 @@ const Hero: React.FC = () => {
                 transition={{ delay: 1.2, duration: 0.8 }}
               >
                 <div className="stats-container">
-                  <div className="stat-item-glass">
+                  <div className="stat-item-glass stat-pulse-1">
                     <div className="stat-number stat-number-primary fw-bold">50+</div>
                     <div className="stat-label text-secondary-contrast">Proyectos</div>
                   </div>
-                  <div className="stat-item-glass">
+                  <div className="stat-item-glass stat-pulse-2">
                     <div className="stat-number stat-number-primary fw-bold">+1</div>
                     <div className="stat-label text-secondary-contrast">Año Exp.</div>
                   </div>
-                  <div className="stat-item-glass">
+                  <div className="stat-item-glass stat-pulse-3">
                     <div className="stat-number stat-number-primary fw-bold">5</div>
                     <div className="stat-label text-secondary-contrast">Clientes</div>
                   </div>
@@ -418,6 +418,29 @@ const Hero: React.FC = () => {
           animation: blink 1s infinite;
           font-weight: 300;
           margin-left: 4px;
+        }
+
+        @keyframes subtle-pulse {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.15);
+          }
+          50% {
+            transform: scale(1.05);
+            box-shadow: 0 12px 28px rgba(139, 115, 85, 0.25);
+          }
+        }
+
+        .stat-pulse-1 {
+          animation: subtle-pulse 3s ease-in-out infinite;
+        }
+
+        .stat-pulse-2 {
+          animation: subtle-pulse 3s ease-in-out infinite 0.5s;
+        }
+
+        .stat-pulse-3 {
+          animation: subtle-pulse 3s ease-in-out infinite 1s;
         }
 
         @media (max-width: 768px) {
