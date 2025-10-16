@@ -378,10 +378,10 @@ pre {
 
 // Button customizations - Minimal & Natural
 .btn {
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 500;
   text-transform: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.01em;
