@@ -420,13 +420,14 @@ pre {
 .card {
   background: var(--color-surface, #FAFAF8);
   border: 1px solid rgba(139, 115, 85, 0.12);
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
   box-shadow: 0 2px 8px rgba(43, 36, 33, 0.04);
   
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(43, 36, 33, 0.08);
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 24px rgba(43, 36, 33, 0.12);
+    border-color: rgba(139, 115, 85, 0.2);
   }
 }
 
