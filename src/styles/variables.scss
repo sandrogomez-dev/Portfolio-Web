@@ -50,6 +50,8 @@ $gradient-secondary: linear-gradient(135deg, $secondary 0%, $beige 100%);
 $gradient-warm: linear-gradient(135deg, $cream 0%, $beige-light 100%);
 $gradient-dark: linear-gradient(135deg, $dark-bg 0%, $dark-surface 100%);
 $gradient-hero: linear-gradient(135deg, rgba($cream, 0.8) 0%, rgba($beige-light, 0.6) 100%);
+$gradient-sunset: linear-gradient(120deg, $danger 0%, $warning 50%, $secondary 100%);
+$gradient-card: linear-gradient(145deg, rgba($white, 0.95) 0%, rgba($cream, 0.9) 100%);
 
 // Soft glass morphism (minimal aesthetic)
 $glass-bg: rgba(250, 250, 248, 0.7);
@@ -146,6 +148,8 @@ $shadow-md: 0 4px 8px rgba(43, 36, 33, 0.06), 0 2px 4px rgba(43, 36, 33, 0.04);
 $shadow-lg: 0 8px 16px rgba(43, 36, 33, 0.08), 0 4px 8px rgba(43, 36, 33, 0.04);
 $shadow-xl: 0 12px 24px rgba(43, 36, 33, 0.1), 0 6px 12px rgba(43, 36, 33, 0.06);
 $shadow-2xl: 0 20px 40px rgba(43, 36, 33, 0.12);
+$shadow-3xl: 0 30px 60px rgba(43, 36, 33, 0.15), 0 15px 30px rgba(43, 36, 33, 0.08);
+$shadow-inner: inset 0 2px 4px rgba(43, 36, 33, 0.06);
 
 // Subtle accent shadows (no neon, just soft warmth)
 $shadow-warm-sm: 0 2px 8px rgba($primary, 0.08);
