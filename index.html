@@ -99,13 +99,26 @@
       .loading-text {
         font-family: 'JetBrains Mono', monospace;
         font-size: 1.2rem;
-        color: #00f3ff;
-        animation: pulse 1.5s infinite;
+        background: linear-gradient(120deg, #8B7355, #A68A64, #D4A373);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shimmer 2s ease-in-out infinite;
       }
       
-      @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
+      @keyframes shimmer {
+        0% { 
+          background-position: -200% 0;
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% { 
+          background-position: 200% 0;
+          opacity: 0.8;
+        }
       }
     </style>
   </head>
