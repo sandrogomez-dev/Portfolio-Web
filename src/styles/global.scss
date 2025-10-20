@@ -123,11 +123,27 @@ p {
 a {
   color: var(--color-primary);
   text-decoration: none;
+  position: relative;
   transition: color 0.3s ease;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+  }
   
   &:hover {
     color: var(--color-accent);
     text-decoration: none;
+    
+    &::after {
+      width: 100%;
+    }
   }
 }
 
