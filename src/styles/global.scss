@@ -414,11 +414,31 @@ pre {
   background: var(--color-primary, #8B7355);
   border: none;
   color: #FAFAF8;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
   
   &:hover {
     background: var(--color-accent, #6B5D52);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(139, 115, 85, 0.25);
+    
+    &::before {
+      width: 300px;
+      height: 300px;
+    }
   }
 }
 
