@@ -19,11 +19,30 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
 
     /* Path mapping */
     "baseUrl": ".",
-        "paths": {      "@/*": ["src/*"],      "@/components/*": ["src/components/*"],      "@/hooks/*": ["src/hooks/*"],      "@/context/*": ["src/context/*"],      "@/utils/*": ["src/utils/*"],      "@/types/*": ["src/types/*"],      "@/styles/*": ["src/styles/*"],      "@/data/*": ["src/data/*"]    }
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@types/*": ["./src/types/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@data/*": ["./src/data/*"],
+      "@context/*": ["./src/context/*"]
+    },
+
+    /* Additional options */
+    "incremental": true,
+    "types": ["vite/client", "node"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
-} 
+}
