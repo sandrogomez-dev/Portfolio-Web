@@ -1,41 +1,55 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
+  
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@/components': path.resolve(__dirname, './src/components'),
-      '@/hooks': path.resolve(__dirname, './src/hooks'),
-      '@/context': path.resolve(__dirname, './src/context'),
-      '@/utils': path.resolve(__dirname, './src/utils'),
-      '@/types': path.resolve(__dirname, './src/types'),
-      '@/styles': path.resolve(__dirname, './src/styles'),
-      '@/data': path.resolve(__dirname, './src/data'),
+      '@': resolve(__dirname, './src'),
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "src/styles/variables.scss";`
-      }
-    }
-  },
+  
   build: {
-    target: 'esnext',
-    minify: 'terser',
+    outDir: 'dist',
+    sourcemap: mode === 'development',
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
+          // Split vendor code for better caching
+          react: ['react', 'react-dom', 'react-router-dom'],
           bootstrap: ['bootstrap', 'react-bootstrap'],
           animations: ['framer-motion', 'react-spring'],
           charts: ['chart.js', 'react-chartjs-2'],
-        }
-      }
-    }
-  }
-}) 
+          particles: ['@tsparticles/react', '@tsparticles/engine', '@tsparticles/basic'],
+        },
+      },
+    },
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+  },
+  
+  server: {
+    port: 3000,
+    open: false,
+    host: false,
+  },
+  
+  preview: {
+    port: 4173,
+    open: false,
+  },
+  
+  // Optimize dependencies
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'framer-motion',
+      'chart.js',
+    ],
+  },
+}));

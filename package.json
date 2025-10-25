@@ -32,7 +32,18 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,scss,css,json}\"",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist node_modules/.vite"
+    "clean": "rm -rf dist node_modules/.vite",
+    "clean:full": "rm -rf dist node_modules node_modules/.vite package-lock.json",
+    "reinstall": "npm run clean:full && npm install",
+    "validate": "npm run type-check && npm run lint && npm run format:check",
+    "prepare": "npm run validate",
+    "analyze": "vite build --mode analyze",
+    "serve": "npm run build && npm run preview",
+    "update:deps": "npm outdated",
+    "update:minor": "npm update --save",
+    "check:size": "npm run build && du -sh dist",
+    "dev:host": "vite --host",
+    "dev:open": "vite --open"
   },
   "dependencies": {
     "react": "^18.2.0",
