@@ -5,24 +5,13 @@
   "printWidth": 100,
   "tabWidth": 2,
   "useTabs": false,
-  "arrowParens": "avoid",
+  "arrowParens": "always",
   "endOfLine": "lf",
   "bracketSpacing": true,
+  "bracketSameLine": false,
   "jsxSingleQuote": false,
-  "jsxBracketSameLine": false,
-  "overrides": [
-    {
-      "files": "*.json",
-      "options": {
-        "printWidth": 80
-      }
-    },
-    {
-      "files": "*.scss",
-      "options": {
-        "singleQuote": false
-      }
-    }
-  ]
+  "quoteProps": "as-needed",
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "css",
+  "embeddedLanguageFormatting": "auto"
 }
-
