@@ -1,0 +1,11 @@
+# Netlify redirects file
+
+# SPA redirect - all routes go to index.html
+/*    /index.html   200
+
+# Redirect old URLs (if applicable)
+# /old-url    /new-url    301
+
+# Force HTTPS
+# http://*    https://:splat    301!
+
