@@ -4,12 +4,14 @@
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
     "ms-vscode.vscode-typescript-next",
-    "syler.sass-indented",
+    "stylelint.vscode-stylelint",
     "formulahendry.auto-rename-tag",
     "christian-kohler.path-intellisense",
-    "dsznajder.es7-react-js-snippets",
-    "eamodio.gitlens",
-    "usernamehw.errorlens"
+    "zignd.html-css-class-completion",
+    "mikestead.dotenv",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    "wix.vscode-import-cost",
+    "eamodio.gitlens"
   ]
 }
-
