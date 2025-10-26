@@ -16,16 +16,16 @@ interface IntersectionObserverResult {
 /**
  * Custom hook to observe element visibility using Intersection Observer API
  * Useful for lazy loading, animations on scroll, infinite scroll, etc.
- * 
+ *
  * @param threshold - Percentage of visibility required to trigger (0-1)
  * @param root - Element used as viewport for checking visibility
  * @param rootMargin - Margin around root element
  * @param freezeOnceVisible - Stop observing once element becomes visible
- * 
+ *
  * @example
  * ```tsx
  * const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.5 });
- * 
+ *
  * return (
  *   <div ref={ref}>
  *     {isIntersecting ? 'Visible!' : 'Not visible'}
@@ -52,9 +52,12 @@ export function useIntersectionObserver({
     if (!hasIOSupport || frozen || !node) return;
 
     const observerParams = { threshold, root, rootMargin };
-    const observer = new IntersectionObserver(([entry]) => {
-      setEntry(entry);
-      setIsIntersecting(entry.isIntersecting);
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry) {
+        setEntry(entry);
+        setIsIntersecting(entry.isIntersecting);
+      }
     }, observerParams);
 
     observer.observe(node);
@@ -68,4 +71,3 @@ export function useIntersectionObserver({
 }
 
 export default useIntersectionObserver;
-
