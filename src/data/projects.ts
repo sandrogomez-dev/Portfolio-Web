@@ -1,7 +1,7 @@
 import { Project, TechStack } from '@/types';
 
 // Tech Stack Data
-export const techStacks: Record<string, TechStack> = {
+export const techStacks = {
   react: {
     id: 'react',
     name: 'React',
@@ -114,7 +114,7 @@ export const techStacks: Record<string, TechStack> = {
     color: '#06B6D4',
     category: 'frontend',
   },
-};
+} satisfies Record<string, TechStack>;
 
 // Sample Projects Data
 export const projects: Project[] = [
