@@ -1,8 +1,11 @@
 ## 📝 Description
+
 <!-- Provide a detailed description of your changes -->
 
 ## 🎯 Type of Change
+
 <!-- Mark the relevant option with an "x" -->
+
 - [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
 - [ ] ✨ New feature (non-breaking change which adds functionality)
 - [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
@@ -14,26 +17,35 @@
 - [ ] 🔧 Build/config update
 
 ## 🔗 Related Issue
+
 <!-- Link to the issue this PR addresses -->
+
 Fixes #(issue number)
 
 ## 📋 Changes Made
+
 <!-- List the specific changes made in this PR -->
+
 - Change 1
 - Change 2
 - Change 3
 
 ## 📸 Screenshots
+
 <!-- If applicable, add screenshots to demonstrate the changes -->
 
 ### Before
+
 <!-- Screenshot before changes -->
 
 ### After
+
 <!-- Screenshot after changes -->
 
 ## ✅ Checklist
+
 <!-- Mark completed items with an "x" -->
+
 - [ ] My code follows the project's style guidelines
 - [ ] I have performed a self-review of my code
 - [ ] I have commented my code, particularly in hard-to-understand areas
@@ -47,7 +59,9 @@ Fixes #(issue number)
 - [ ] I have run `npm run format:check` and formatted code if needed
 
 ## 🧪 Testing
+
 <!-- Describe the tests you ran and how to reproduce them -->
+
 - [ ] Tested locally
 - [ ] Tested in production build (`npm run build` && `npm run preview`)
 - [ ] Tested on different screen sizes
@@ -55,12 +69,15 @@ Fixes #(issue number)
 - [ ] Tested with screen reader (accessibility)
 
 ### Test Instructions
+
 1. Step 1
 2. Step 2
 3. Step 3
 
 ## 📱 Browser Compatibility
+
 <!-- Mark browsers where you've tested -->
+
 - [ ] Chrome
 - [ ] Firefox
 - [ ] Safari
@@ -69,28 +86,36 @@ Fixes #(issue number)
 - [ ] Mobile Chrome (Android)
 
 ## ⚡ Performance Impact
+
 <!-- Describe any performance implications -->
+
 - [ ] No performance impact
 - [ ] Improved performance
 - [ ] Minor performance impact
 - [ ] Needs performance optimization
 
 ## 🔒 Security Considerations
+
 <!-- Any security implications of this change? -->
+
 - [ ] No security implications
 - [ ] Security improvement
 - [ ] Requires security review
 
 ## 📚 Documentation
+
 <!-- Link to any relevant documentation -->
+
 - [ ] README updated
 - [ ] Code comments added
 - [ ] CONTRIBUTING.md updated (if needed)
 
 ## 💬 Additional Notes
+
 <!-- Any additional information that reviewers should know -->
 
 ## 📋 Deployment Notes
+
 <!-- Any special considerations for deployment? -->
 
 ---
