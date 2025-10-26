@@ -114,7 +114,7 @@ export const techStacks = {
     color: '#06B6D4',
     category: 'frontend',
   },
-} satisfies Record<string, TechStack>;
+} as const satisfies Record<string, TechStack>;
 
 // Sample Projects Data
 export const projects: Project[] = [
@@ -126,10 +126,10 @@ export const projects: Project[] = [
     longDescription:
       'NexusShop es una plataforma de e-commerce premium construida con React 18, TypeScript y Vite. Características destacadas: carrito inteligente con persistencia automática y Zustand, diseño glassmorphism con efectos backdrop-blur, gradientes animados y microinteracciones, performance optimizada con code splitting automático y lazy loading, PWA ready para experiencia nativa, animaciones premium con Framer Motion para transiciones suaves, hover effects interactivos y 3D transforms. Todo con responsive design mobile-first y paleta de colores inspirada en marcas premium.',
     techStack: [
-      techStacks.react,
-      techStacks.typescript,
-      techStacks.tailwind,
-      techStacks.figma,
+      techStacks.react!,
+      techStacks.typescript!,
+      techStacks.tailwind!,
+      techStacks.figma!,
     ],
     links: [
       { type: 'demo', url: 'https://nexus-shop-two.vercel.app/', label: 'Ver Demo' },
@@ -176,7 +176,7 @@ export const projects: Project[] = [
       'Aplicación moderna de gestión de proyectos que combina tableros Kanban, gráficos Gantt, seguimiento de tiempo y analíticas avanzadas en una interfaz elegante.',
     longDescription:
       'TaskFlow es una aplicación completa de gestión de proyectos construida con React 19 que integra funcionalidades avanzadas: tableros Kanban con drag & drop intuitivo, gráficos Gantt para vista temporal, cronómetro integrado para seguimiento de tiempo, plantillas predefinidas (Software, Marketing, Diseño), dashboard con métricas en tiempo real, sistema de notificaciones, tema claro/oscuro, y exportación de datos. Todo optimizado con diseño responsive y experiencia de usuario moderna.',
-    techStack: [techStacks.react, techStacks.typescript, techStacks.figma],
+    techStack: [techStacks.react!, techStacks.typescript!, techStacks.figma!],
     links: [
       { type: 'demo', url: 'https://task-flow-red-seven.vercel.app/dashboard', label: 'Ver Demo' },
       { type: 'repo', url: 'https://github.com/sandrogomez-dev/taskflow', label: 'Código' },
@@ -222,14 +222,14 @@ export const projects: Project[] = [
     longDescription:
       'Estudio completo de generación de imágenes con IA construido con Next.js 14 y FastAPI. Características destacadas: asistente contextual de prompts con +50 templates artísticos, galería comunitaria con infinite scrolling virtualizado, editor integrado con filtros y upscaling Real-ESRGAN 4x, historial semántico con Redis Vector Search, y sistema de tags colaborativo con ML. Optimizado para alto rendimiento con Lighthouse 98/100.',
     techStack: [
-      techStacks.nextjs,
-      techStacks.typescript,
-      techStacks.python,
-      techStacks.fastapi,
-      techStacks.postgresql,
-      techStacks.redis,
-      techStacks.aws,
-      techStacks.docker,
+      techStacks.nextjs!,
+      techStacks.typescript!,
+      techStacks.python!,
+      techStacks.fastapi!,
+      techStacks.postgresql!,
+      techStacks.redis!,
+      techStacks.aws!,
+      techStacks.docker!,
     ],
     links: [
       { type: 'demo', url: 'https://ai-image-studio-frontend.vercel.app/', label: 'Ver Demo' },
@@ -276,7 +276,7 @@ export const projects: Project[] = [
       'Aplicación web moderna para planificar viajes personalizados con formularios inteligentes, validación robusta y arquitectura escalable.',
     longDescription:
       'Travel Guide es una aplicación completa de planificación de viajes construida con React 19 y Bootstrap 5. Características destacadas: formulario inteligente con validación en tiempo real, 7 categorías de viaje (Aventura, Cultural, Relajación), cálculo automático de duración, validación robusta con mensajes descriptivos en español, diseño responsivo mobile-first, custom hooks para lógica de negocio reutilizable, indicador de progreso del formulario, estados de carga con spinner, y arquitectura escalable con separación de responsabilidades. Código limpio con JSDoc y componentes modulares.',
-    techStack: [techStacks.react, techStacks.typescript, techStacks.figma],
+    techStack: [techStacks.react!, techStacks.typescript!, techStacks.figma!],
     links: [
       { type: 'demo', url: 'https://travel-guide-kappa-nine.vercel.app/', label: 'Ver Demo' },
       { type: 'repo', url: 'https://github.com/sandrogomez-dev/travel-guide', label: 'Código' },
@@ -322,11 +322,11 @@ export const projects: Project[] = [
     longDescription:
       'Analytics Dashboard Pro es un dashboard empresarial de última generación con visualización de datos interactiva en tiempo real, integración multi-fuente (Google Analytics, Salesforce, APIs personalizadas), arquitectura limpia con patrón adapter, gestión de estado avanzada con Zustand, actualizaciones en tiempo real con WebSockets, capacidades de exportación (PDF, CSV, Excel), modo oscuro/claro automático, diseño responsive mobile-first, y optimización de performance con virtualización, componentes memoizados y lazy loading. Cero warnings de TypeScript con type safety estricto.',
     techStack: [
-      techStacks.react,
-      techStacks.typescript,
-      techStacks.tailwind,
-      techStacks.graphql,
-      techStacks.socketio,
+      techStacks.react!,
+      techStacks.typescript!,
+      techStacks.tailwind!,
+      techStacks.graphql!,
+      techStacks.socketio!,
     ],
     links: [
       {
@@ -380,7 +380,7 @@ export const projects: Project[] = [
       'Aplicación web avanzada para crear currículums profesionales con múltiples plantillas, IA integrada, análisis inteligente y optimización ATS.',
     longDescription:
       'Generador de Currículum Profesional es una aplicación completa construida con React 18 y Vite que integra IA avanzada para crear CVs impresionantes. Características destacadas: 5 plantillas profesionales (Moderno, Ejecutivo, Creativo), asistente de IA con OpenAI para generar contenido, análisis automático con puntuación y métricas, optimización para ATS, autenticación con Firebase y guardado en la nube, personalización de colores en tiempo real, modo oscuro/claro, tour guiado para nuevos usuarios, exportación PDF de alta calidad con jsPDF, y validación en tiempo real. Todo con arquitectura moderna y experiencia de usuario excepcional.',
-    techStack: [techStacks.react, techStacks.typescript, techStacks.aws, techStacks.figma],
+    techStack: [techStacks.react!, techStacks.typescript!, techStacks.aws!, techStacks.figma!],
     links: [
       { type: 'demo', url: 'https://generador-curriculum.vercel.app/', label: 'Ver Demo' },
       { type: 'repo', url: 'https://github.com/sandrogomez-dev/generador-cv', label: 'Código' },
