@@ -36,7 +36,6 @@
     "clean:full": "rm -rf dist node_modules node_modules/.vite package-lock.json",
     "reinstall": "npm run clean:full && npm install",
     "validate": "npm run type-check && npm run lint && npm run format:check",
-    "prepare": "npm run validate",
     "analyze": "vite build --mode analyze",
     "serve": "npm run build && npm run preview",
     "update:deps": "npm outdated",
