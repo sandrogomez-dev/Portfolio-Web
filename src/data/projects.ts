@@ -126,10 +126,10 @@ export const projects: Project[] = [
     longDescription:
       'NexusShop es una plataforma de e-commerce premium construida con React 18, TypeScript y Vite. Características destacadas: carrito inteligente con persistencia automática y Zustand, diseño glassmorphism con efectos backdrop-blur, gradientes animados y microinteracciones, performance optimizada con code splitting automático y lazy loading, PWA ready para experiencia nativa, animaciones premium con Framer Motion para transiciones suaves, hover effects interactivos y 3D transforms. Todo con responsive design mobile-first y paleta de colores inspirada en marcas premium.',
     techStack: [
-      techStacks['react'],
-      techStacks['typescript'],
-      techStacks['tailwind'],
-      techStacks['figma'],
+      techStacks.react,
+      techStacks.typescript,
+      techStacks.tailwind,
+      techStacks.figma,
     ],
     links: [
       { type: 'demo', url: 'https://nexus-shop-two.vercel.app/', label: 'Ver Demo' },
@@ -222,14 +222,14 @@ export const projects: Project[] = [
     longDescription:
       'Estudio completo de generación de imágenes con IA construido con Next.js 14 y FastAPI. Características destacadas: asistente contextual de prompts con +50 templates artísticos, galería comunitaria con infinite scrolling virtualizado, editor integrado con filtros y upscaling Real-ESRGAN 4x, historial semántico con Redis Vector Search, y sistema de tags colaborativo con ML. Optimizado para alto rendimiento con Lighthouse 98/100.',
     techStack: [
-      techStacks['nextjs'],
-      techStacks['typescript'],
-      techStacks['python'],
-      techStacks['fastapi'],
-      techStacks['postgresql'],
-      techStacks['redis'],
-      techStacks['aws'],
-      techStacks['docker'],
+      techStacks.nextjs,
+      techStacks.typescript,
+      techStacks.python,
+      techStacks.fastapi,
+      techStacks.postgresql,
+      techStacks.redis,
+      techStacks.aws,
+      techStacks.docker,
     ],
     links: [
       { type: 'demo', url: 'https://ai-image-studio-frontend.vercel.app/', label: 'Ver Demo' },
